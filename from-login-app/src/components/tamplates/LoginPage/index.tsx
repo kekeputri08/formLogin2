@@ -18,7 +18,7 @@ const Login:FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form onSubmit={handleLogin} className="bg-pink-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <Input label='Email' type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input label='Password' type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
       <div className="flex justify-between mt-4">

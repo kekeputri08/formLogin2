@@ -7,20 +7,18 @@ export const navbarData = [
   {
     name: 'About', 
     path: '/about',
-    icon:'',
+    icon:'FaAddressBook',
   },
   {
     name: 'Services', 
     path: '/services',
-    icon:'',
+    icon:'FaAtom',
   
   },
   {
     name: 'Contact', 
     path: '/contact',
-    icon:'',
-  
-
+    icon:'FaAddressCard',
   },
 
 ]

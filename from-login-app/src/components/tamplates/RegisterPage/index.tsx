@@ -42,7 +42,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="bg-pink-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <form onSubmit={handleSubmit}>
         <Input label='Name' type='text' name='name' value={formData.name} onChange={handleChange}/>
         <Input label='Tanggal Lahir' name='birthDate' type='date' value={formData.birthDate} onChange={handleChange}/>

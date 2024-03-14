@@ -4,6 +4,7 @@ interface ButtonProps {
   type: 'submit' | 'button'
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void; 
   text: string;
+  
 }
 
 const Button: FC<ButtonProps> = ({ type, onClick, text }) => {
