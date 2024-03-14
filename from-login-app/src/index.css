@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0d9f1;
+}
+
+.title-form{
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start; /* rata kiri */
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #89e0ea;
+  background-color: #e1aae4; /* form background color */
+  padding: 20px; /* add padding */
+  border-radius: 10px; /* add border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add box shadow */
+}
+
+
+.form-group {
+  margin-bottom: 20px; /* increase margin */
+  width: 100%; /* make width 100% */
+  display: flex;
+  justify-content: Space-between;
+}
+
+button-group {
+  margin-top: 20px;
+  width: 100%; /* make width 100% */
+  display: flex;
+  justify-content: center; /* center buttons */
+}
+
+.submitted-data {
+  margin-bottom: 22px; /* increase margin */
+  width: 20%;
+  border: 10px;
+  padding: 30%;
+  background-color: #e1aae4; /* background color */
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
