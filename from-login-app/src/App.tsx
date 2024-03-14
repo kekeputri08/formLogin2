@@ -1,7 +1,7 @@
 // App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/atoms/Navbar';
+import Navbar from './components/molekules/Navbar';
 import { navbarData } from './utils/staticVariables';
 import RegisterPage from './components/tamplates/RegisterPage';
 import HomePage from './components/tamplates/HomePage';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
   };
 
   const handleRegister = (formData: any) => {
-    console.log('yuhu', formData);
+    console.log(formData);
   };
 
   return (

@@ -1,22 +1,26 @@
 export const navbarData = [
+  {
+    name: 'Home', 
+    path: '/',
+    icon: 'FaHome',
+  },
+  {
+    name: 'About', 
+    path: '/about',
+    icon:'',
+  },
+  {
+    name: 'Services', 
+    path: '/services',
+    icon:'',
   
-    
-    {
-      name: 'Home', 
-      path: '/'
-    },
-    {
-      name: 'About', 
-      path: '/about'
-    },
-    {
-      name: 'Services', 
-      path: '/services'
-    },
-    {
-      name: 'Contact', 
-      path: '/contact'
-    },
+  },
+  {
+    name: 'Contact', 
+    path: '/contact',
+    icon:'',
   
 
-  ]
+  },
+
+]
