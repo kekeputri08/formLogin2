@@ -1,11 +1,9 @@
 export const navbarData = [
-    {
-        name: 'Register', 
-        path: '/'
-      },
+  
+    
     {
       name: 'Home', 
-      path: '/home'
+      path: '/'
     },
     {
       name: 'About', 
@@ -19,5 +17,6 @@ export const navbarData = [
       name: 'Contact', 
       path: '/contact'
     },
+  
 
   ]

@@ -27,7 +27,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(formData); // call the onSubmit function passed from props
   };
 
   const handleReset = () => {
