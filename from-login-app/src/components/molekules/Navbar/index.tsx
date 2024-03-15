@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { navbarData } from '../../../utils/staticVariables';
 import { Link } from 'react-router-dom';
 import { FaHome, FaAtom, FaAddressBook, FaAddressCard, FaSignOutAlt, FaAngleDoubleLeft } from 'react-icons/fa'; 
-import logoK from '../../../assets/images/logoK.jpg';
+import logoK from '../../../assets/images/logoK.png';
 
 interface NavbarData {
   path: string;
@@ -47,7 +47,7 @@ const Navbar: FC<NavbarProps> = ({ navbarData }) => {
   return (
     <nav onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="flex flex-row p-6 items-center justify-center h-screen bg-[#f0d9f1] mx-auto">
-      <img src={logoK} alt="keke" className="h-12 w-auto mb-1 absolute top-10 z-10" />
+      <img src={logoK} alt="keke" className="h-20 w-auto mb-1 absolute top-10 z-10" />
         <ul className="flex flex-col items-start justify-between">
           {navbarData.map(data => (
             <li className='flex flex-row gap-4 items-center' key={data.path}>
