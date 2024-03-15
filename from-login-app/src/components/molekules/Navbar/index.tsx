@@ -45,17 +45,17 @@ const Navbar: FC<NavbarProps> = ({ navbarData }) => {
   };
 
   return (
-    <nav onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <nav className='relative' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="flex flex-row p-6 items-center justify-center h-screen bg-[#f0d9f1] mx-auto">
       <img src={logoK} alt="keke" className="h-20 w-auto mb-1 absolute top-10 z-10" />
-        <ul className="flex flex-col items-start justify-between">
+        <ul className="flex flex-col items-start justify-between gap-4">
           {navbarData.map(data => (
             <li className='flex flex-row gap-4 items-center' key={data.path}>
               {renderIcon(data.icon)}
               <Link to={data.path} className={`text-black ${showText ? 'block' : 'hidden'}`}>{data.name}</Link>
             </li>
           ))}
-          <li className="flex flex-row gap-4 items-center mt-12" >
+          <li className="absolute bottom-8 flex flex-row gap-4 items-center mt-12" >
             <div>
               <FaSignOutAlt className="text-black" />
             </div>
@@ -63,9 +63,12 @@ const Navbar: FC<NavbarProps> = ({ navbarData }) => {
           </li>
         </ul>
       </div>
-      <div className="absolute bottom-0 left-32 mb-4 ml-4 " >
-        <FaAngleDoubleLeft className="text-black cursor-pointer" onClick={toggleShowText} />
-      </div>
+
+      {
+        showText ? 
+        <FaAngleDoubleLeft className="absolute bottom-0 right-0 text-black cursor-pointer" onClick={toggleShowText} /> :''
+      }
+       
     </nav>
   );
 };

@@ -10,6 +10,7 @@ import ServicesPage from './components/tamplates/ServicesPage';
 import ContactPage from './components/tamplates/ContactPage';
 import LoginPage from './components/tamplates/LoginPage';
 
+
 const App: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
     // implement login functionality
