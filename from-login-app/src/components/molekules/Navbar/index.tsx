@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react';
 import { navbarData } from '../../../utils/staticVariables';
 import { Link } from 'react-router-dom';
-import { FaHome, FaAtom, FaAddressBook, FaAddressCard, FaSignOutAlt } from 'react-icons/fa'; 
+import { FaHome, FaAtom, FaAddressBook, FaAddressCard, FaSignOutAlt, FaAngleDoubleLeft } from 'react-icons/fa'; 
+import images from '../../../images/logoK.jpg';
 
 interface NavbarData {
   path: string;
@@ -16,8 +17,16 @@ interface NavbarProps {
 const Navbar: FC<NavbarProps> = ({ navbarData }) => {
   const [showText, setShowText] = useState(true);
 
-  const handleLogoutClick = () => {
+
+  const toggleShowText = () => {
     setShowText(!showText);
+  };
+
+  const handleMouseEnter = () => {
+    setShowText(true);
+  };
+
+  const handleMouseLeave = () => {
   };
 
   const renderIcon = (iconName: string) => {
@@ -36,8 +45,9 @@ const Navbar: FC<NavbarProps> = ({ navbarData }) => {
   };
 
   return (
-    <nav >
-      <div className="flex flex-row p-4 items-center justify-center h-screen bg-[#f0d9f1] mx-auto">
+    <nav onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="flex flex-row p-6 items-center justify-center h-screen bg-[#f0d9f1] mx-auto">
+      <img src="images/logoK.jpg" alt="keke" className="h-6 w-auto mb-1 absolute top-20 z-10" />
         <ul className="flex flex-col items-start justify-between">
           {navbarData.map(data => (
             <li className='flex flex-row gap-4 items-center' key={data.path}>
@@ -45,13 +55,16 @@ const Navbar: FC<NavbarProps> = ({ navbarData }) => {
               <Link to={data.path} className={`text-black ${showText ? 'block' : 'hidden'}`}>{data.name}</Link>
             </li>
           ))}
-          <div className="flex flex-row gap-4 items-center" 
-               style={{ marginTop: '50px' }} 
-               onClick={handleLogoutClick}>
-            <FaSignOutAlt className="text-black" />
+          <li className="flex flex-row gap-4 items-center mt-12" >
+            <div>
+              <FaSignOutAlt className="text-black" />
+            </div>
             <Link to="/logout" className={`logout-text text-black ${showText ? 'block' : 'hidden'}`}>Logout</Link>
-          </div>
+          </li>
         </ul>
+      </div>
+      <div className="absolute bottom-0 left-32 mb-4 ml-4 " >
+        <FaAngleDoubleLeft className="text-black cursor-pointer" onClick={toggleShowText} />
       </div>
     </nav>
   );
