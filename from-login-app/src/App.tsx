@@ -9,11 +9,20 @@ import AboutPage from './components/tamplates/AboutPage';
 import ServicesPage from './components/tamplates/ServicesPage';
 import ContactPage from './components/tamplates/ContactPage';
 import LoginPage from './components/tamplates/LoginPage';
-
+import axios from 'axios';
 
 const App: React.FC = () => {
-  const handleLogin = (email: string, password: string) => {
-    // implement login functionality
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      // Panggil API login di sini
+      const response = await axios.get('https://take-home-test-api.nutech-integrasi.app/login', { email, password });
+      
+      // Handle respons dari API sesuai kebutuhan aplikasi Anda
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error during login:', error);
+      // Handle error secara sesuai kebutuhan aplikasi Anda
+    }
   };
 
   const handleRegister = (formData: any) => {

@@ -1,5 +1,5 @@
 // RegisterPage.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
 
@@ -17,6 +17,8 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
     password: ''
   });
 
+  const [submittedData, setSubmittedData] = useState<FormData | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -27,8 +29,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit(formData); // call the onSubmit function passed from props
+    onSubmit(formData); 
   };
+
 
   const handleReset = () => {
     setFormData({
@@ -40,6 +43,10 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
       password: ''
     });
   };
+
+  useEffect(() => {
+    console.log('Submitted Data:', submittedData);
+  }, [submittedData]);
 
   return (
     <div className="bg-pink-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -54,6 +61,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onSubmit }) => {
         <div className="flex justify-between mt-4">
           <Button type="submit" text="Submit" />
           <Button type="button" onClick={handleReset} text="Reset" />
+          
         </div>
       </form>
     </div>

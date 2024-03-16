@@ -1,34 +1,40 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+// components/tamplates/AboutPage.tsx
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-
-const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
-
-export default function App() {
-  const [post, setPost] = useState<Post | null>(null);
+const AboutPage: React.FC = () => {
+  const [aboutData, setAboutData] = useState<any>(null);
 
   useEffect(() => {
-    axios.get<Post>(baseURL)
-      .then((response) => {
-        setPost(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching post:", error);
-      });
-  }, []);
+    const fetchAboutData = async () => {
+      try {
+        const response = await axios.get('https://take-home-test-api.nutech-integrasi.app/about');
+        setAboutData(response.data);
+      } catch (error) {
+        console.error('Error fetching about data:', error);
+      }
+    };
 
-  if (!post) return null;
+    fetchAboutData();
+
+    
+    return () => {
+    };
+  }, []);
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <h2>About Page</h2>
+      {aboutData ? (
+        <div>
+          <h3>{aboutData.title}</h3>
+          <p>{aboutData.description}</p>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
-}
+};
+
+export default AboutPage;
